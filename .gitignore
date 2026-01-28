@@ -1,0 +1,30 @@
+# Ignore everything in root by default
+/*
+
+# Whitelist specific config files/folders in root
+!/.vscode/
+!/*.code-workspace
+!/.gitignore
+!/*.md
+!/LICENSE
+
+# .vscode: Track everything
+!/.vscode/**
+
+# .agent: Handle with granularity
+!/.agent/
+# Ignore everything inside .agent by default
+/.agent/*
+
+# .agent Whitelist: Only keep global rules and templates
+!/.agent/rules/
+!/.agent/workflows/
+!/.agent/pending-backend-template.md
+
+# ⚠️ SECURITY: Do NOT whitelist context/memory for open source
+!/.agent/context/ 
+
+# Track contents of whitelisted .agent folders
+!/.agent/rules/**
+!/.agent/workflows/**
+# !/.agent/context/**

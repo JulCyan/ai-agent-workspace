@@ -1,0 +1,43 @@
+{
+	"folders": [
+		{
+			"path": ".agent",
+		},
+		{
+			"path": ".vscode",
+		},
+		{
+			"path": "fe-readme"
+		},
+		{
+			"path": "fe-go-ops"
+		},
+		{
+			"path": "fe-go-passport"
+		},
+		{
+			"path": "go-web-template"
+		},
+		
+		{
+			"path": ".",
+			"name": "🔁 Workspace Switcher"
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			// Hide heavy project folders from the Switcher (root view)
+			"fe-*": true,
+			"go-study.code-workspace": false,
+			"go-web-template*": true,
+			// Hide config folders from Switcher since they are explicitly added above
+			".agent": true,
+			".vscode": true,
+			".git": true,
+			"node_modules": true,
+			"package.json": true,
+			".gitignore": true,
+			"LICENSE": true,
+		}
+	}
+}
