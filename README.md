@@ -12,6 +12,14 @@
 - **💾 上下文持久化**: 通过 `.agent/context` 归档和同步 AI 的思维链与 Artifacts (需手动从 gitignore 放行私有内容)。
 - **🎯 干扰隔离**: 智能的 `.gitignore` 和 `files.exclude` 配置，让您只关注配置本身，而忽略繁重的项目代码。
 - **🔄 跨设备同步**: 像同步代码一样同步您的开发环境和“外脑”。
+- **📦 Workspace-First**: 所有 IDE 行为以 `.workspace/base.code-workspace` 为唯一规范源。
+
+## 🚨 核心约定 (Critical Rules)
+
+> [!CAUTION]
+> **禁止使用 `code .` 打开此文件夹！** 这会导致配置无法正确加载。
+>
+> ✅ **正确方式**: `code .workspace/full.code-workspace` 或其他具体工作区文件。
 
 ## 🚀 快速开始 (Getting Started)
 
@@ -47,7 +55,10 @@ Workspace/
 │   ├── rules/              # 全局 Prompt 规则 (如: 编码规范, 提交规范)
 │   ├── workflows/          # 常用 AI 工作流脚本
 │   └── context/            # (Git ignored) 这一台机器上的私有记忆
-├── .vscode/                # 统一编辑器设置 (settings.json)
+├── .workspace/             # 🟢 [核心] 工作区定义文件
+│   ├── base.code-workspace # 基础模版 (所有其他文件需包含此配置)
+│   └── full.code-workspace # 包含所有项目的入口
+├── .vscode/                # 🔴 [已废弃] 仅留存根
 ├── my-app/                 # 您的实际项目 (被 git 忽略，独立管理)
 ├── LICENSE                 # MIT License
 └── README.md

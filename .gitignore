@@ -3,6 +3,7 @@
 
 # Whitelist specific config files/folders in root
 !/.vscode/
+!/.workspace/
 !/*.code-workspace
 !/.gitignore
 !/*.md
