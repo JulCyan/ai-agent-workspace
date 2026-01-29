@@ -64,6 +64,33 @@ Workspace/
 └── README.md
 ```
 
+## 🧠 智能规则配置 (Smart Rules)
+
+本工作区支持**基于上下文的规则加载**，以避免 Prompt 污染。
+
+### 1. 配置标签 (Workspace Tags)
+
+在您的 `.code-workspace` 文件中定义该工作区需激活的规则标签：
+
+```json
+"settings": {
+  "agent.active_rule_tags": ["go", "backend", "general"]
+}
+```
+
+### 2. 定义规则 (Rule Tags)
+
+在 `.agent/rules/` 下的规则文件头部添加 YAML Frontmatter：
+
+```yaml
+---
+tags: ["go", "backend"]
+trigger: model_decision
+---
+```
+
+> **默认策略**: 若未配置 Tag，系统默认加载 `["core", "general"]` 标签的规则。
+
 ## 🤝 Contributing
 
 欢迎提交 Issue 或 PR 分享您觉得好用的 `.agent/rules` 或工作流！

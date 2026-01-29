@@ -1,55 +1,57 @@
 {
-	"folders": [
-		{
-			"path": "../.agent",
+  "folders": [
+    {
+      "path": "../.agent",
     },
     {
       "path": "../.vscode",
-		},
-		{
-			"path": "../.workspace",
-		},
-		{
+    },
+    {
+      "path": "../.workspace",
+    },
+    {
       "path": "../fe-readme",
-		},
-		{
+    },
+    {
       "path": "../fe-go-ops",
-		},
-		{
+    },
+    {
       "path": "../fe-go-passport",
-		},
-		{
+    },
+    {
       "path": "../go-web-template",
     },
-	],
-	"settings": {
-		// [体验] 自动保存，防止意外丢失
-		"files.autoSave": "onFocusChange",
-		// [规范] 保存时自动格式化，保持代码整洁
-		"editor.formatOnSave": true,
-		// [规范] 自动清除行尾空格，减少 Git 差异噪音
-		"files.trimTrailingWhitespace": true,
-		// [规范]文件末尾保留空行，符合 POSIX 标准
-		"files.insertFinalNewline": true,
-		"search.exclude": {
-			"**/node_modules": true,
-			"**/bower_components": true,
-			"**/*.code-search": true,
-			"**/.egg": true,
-			"**/run": true,
-			"**/dist": true,
-			"**/coverage": true,
-			"**/.history": true,
-			"**/.idea": true
-		},
-		"files.watcherExclude": {
-			"**/node_modules/**": true,
-			"**/dist/**": true,
-			"**/.git/objects/**": true,
-			"**/.egg/**": true,
-			"**/coverage/**": true
-		},
-		"files.exclude": {
+  ],
+  "settings": {
+    // 🏷️ Active Rule Tags
+    "agent.active_rule_tags": ["go", "backend", "general"],
+    // [体验] 自动保存，防止意外丢失
+    "files.autoSave": "onFocusChange",
+    // [规范] 保存时自动格式化，保持代码整洁
+    "editor.formatOnSave": true,
+    // [规范] 自动清除行尾空格，减少 Git 差异噪音
+    "files.trimTrailingWhitespace": true,
+    // [规范]文件末尾保留空行，符合 POSIX 标准
+    "files.insertFinalNewline": true,
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/bower_components": true,
+      "**/*.code-search": true,
+      "**/.egg": true,
+      "**/run": true,
+      "**/dist": true,
+      "**/coverage": true,
+      "**/.history": true,
+      "**/.idea": true,
+    },
+    "files.watcherExclude": {
+      "**/node_modules/**": true,
+      "**/dist/**": true,
+      "**/.git/objects/**": true,
+      "**/.egg/**": true,
+      "**/coverage/**": true,
+    },
+    "files.exclude": {
       "**/node_modules/**": true,
       "**/.git": true,
       "**/.svn": true,

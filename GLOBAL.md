@@ -1,8 +1,21 @@
-# ------ A. 语言与规则目录 ------
+# ------ A. 语言规范 (Language) ------
 
 - 所有与用户的沟通内容**以及由 Agent 输出的说明、方案、分析、文档**，均需使用中文。
 - 技术专有名词、代码标识、缩写可保留英文（如 API、Python、DTO、TypeScript 等）。
-- 项目级规则文件统一放置在 `.agent/rules` 目录中，所有行为需遵循该目录下的规范。
+
+# ------ B. 规则体系 (Rule System) ------
+
+- **存放目录**：项目级规则文件统一放置在 `.agent/rules` 目录中。
+- **配置逻辑**：
+  - **触发机制**：
+    - `always`: (默认) 始终生效，必须遵守。
+    - `user_request`: 仅当用户明确提及该主题时生效。
+    - `model_decision`: Agent 根据当前任务上下文自行判断是否加载该规则。
+  - **加载策略 (Loading Strategy)**：
+    1. 读取配置项 `settings["agent.active_rule_tags"]`。
+       - \> **Fallback**: 若未定义或无活跃工作区，默认使用 `["general", "core"]`。
+    2. 仅加载 `active_rule_tags` 与规则文件 `tags` 有交集的规则。
+    3. 若规则标记为 `trigger: always`，则忽略 Tag 限制始终加载。
 
 # ------ 1. 基本原则 ------
 
