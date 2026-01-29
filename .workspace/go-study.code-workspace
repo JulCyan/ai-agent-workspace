@@ -25,6 +25,10 @@
   "settings": {
     // 🏷️ Active Rule Tags
     "agent.active_rule_tags": ["go", "backend", "general"],
+    // 🙈 Hide the outer 'Workspace' meta-repo to focus on inner project repos
+    "git.ignoredRepositories": [
+      "../."
+    ],
     // [体验] 自动保存，防止意外丢失
     "files.autoSave": "onFocusChange",
     // [规范] 保存时自动格式化，保持代码整洁

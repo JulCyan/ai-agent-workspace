@@ -1,6 +1,6 @@
 ---
 trigger: always_on
-tags: [core, general]
+tags: [core, general, workflow]
 ---
 
 # 开发工作流 (Development Protocol)
