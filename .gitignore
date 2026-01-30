@@ -12,20 +12,27 @@
 # .vscode: Track everything
 !/.vscode/**
 
-# .agent: Handle with granularity
+# ==============================
+# .agent: Granular Control
+# ==============================
 !/.agent/
-# Ignore everything inside .agent by default
 /.agent/*
 
-# .agent Whitelist: Only keep global rules and templates
+# Always track: rules, workflows, docs (templates)
 !/.agent/rules/
-!/.agent/workflows/
-!/.agent/pending-backend-template.md
-
-# ⚠️ SECURITY: Do NOT whitelist context/memory for open source
-!/.agent/context/ 
-
-# Track contents of whitelisted .agent folders
 !/.agent/rules/**
+!/.agent/workflows/
 !/.agent/workflows/**
-# !/.agent/context/**
+!/.agent/docs/
+!/.agent/docs/**
+/.agent/docs/archive/
+
+# Track projects (active projects)
+!/.agent/projects/
+!/.agent/projects/**
+
+# ⚠️ Do NOT track: archive (completed projects inside projects)
+/.agent/projects/archive/
+
+# Template files
+!/.agent/pending-backend-template.md

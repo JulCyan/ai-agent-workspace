@@ -51,16 +51,23 @@ cp go-study.code-workspace my-project.code-workspace
 
 ```text
 Workspace/
-├── .agent/                 # AI 大脑核心
-│   ├── rules/              # 全局 Prompt 规则 (如: 编码规范, 提交规范)
-│   ├── workflows/          # 常用 AI 工作流脚本
-│   └── context/            # (Git ignored) 这一台机器上的私有记忆
-├── .workspace/             # 🟢 [核心] 工作区定义文件
-│   ├── base.code-workspace # 基础模版 (所有其他文件需包含此配置)
-│   └── full.code-workspace # 包含所有项目的入口
-├── .vscode/                # 🔴 [已废弃] 仅留存根
-├── my-app/                 # 您的实际项目 (被 git 忽略，独立管理)
-├── LICENSE                 # MIT License
+├── .agent/                     # 🧠 AI 大脑核心
+│   ├── docs/                   # 通用文档/模板 (✅ Git Tracked)
+│   ├── projects/               # ⚡ 活跃项目工作区 (✅ Git Tracked)
+│   │   ├── <project-name>/     #   单个项目上下文
+│   │   │   ├── docs/           #     需求/方案
+│   │   │   ├── apis/           #     API 文档/数据
+│   │   │   └── prototypes/     #     原型设计
+│   │   └── archive/            #   🏁 已完成项目归档 (❌ Ignored)
+│   ├── rules/                  # 📏 全局 Prompt 规则 (✅ Git Tracked)
+│   ├── workflows/              # 🔄 常用 AI 工作流脚本 (✅ Git Tracked)
+│   └── context/                # 💾 私有记忆 (❌ Ignored - Privacy First)
+├── .workspace/                 # 🟢 [核心] 工作区定义文件
+│   ├── base.code-workspace     # 基础模版 (作为继承源)
+│   └── full.code-workspace     # 全局管理入口
+├── .vscode/                    # 🔴 [已废弃] 仅留存根
+├── my-app/                     # 📦 您的实际项目 (❌ Ignored - Managed separately)
+├── LICENSE                     # MIT License
 └── README.md
 ```
 
