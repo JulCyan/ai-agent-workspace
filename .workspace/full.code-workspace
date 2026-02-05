@@ -5,13 +5,15 @@
     },
   ],
   "settings": {
-    // [体验] 自动保存，防止意外丢失
+    // 🏷️ Active Rule Tags (Default) / 默认激活规则标签
+    "agent.active_rule_tags": ["core", "general"],
+    // [UX] Auto Save / 自动保存
     "files.autoSave": "onFocusChange",
-    // [规范] 保存时自动格式化，保持代码整洁
+    // [Style] Format on Save / 保存时自动格式化
     "editor.formatOnSave": true,
-    // [规范] 自动清除行尾空格，减少 Git 差异噪音
+    // [Style] Trim Trailing Whitespace / 清除行尾空格
     "files.trimTrailingWhitespace": true,
-    // [规范]文件末尾保留空行，符合 POSIX 标准
+    // [Style] Insert Final Newline / 文件末尾插入空行
     "files.insertFinalNewline": true,
     "search.exclude": {
       "**/node_modules": true,
@@ -32,10 +34,12 @@
       "**/coverage/**": true,
     },
     "files.exclude": {
-      // In 'full' mode, we might want to see everything, OR just hide system files.
-      // Let's hide the system directories to keep it clean.
-      ".git": true,
-      ".DS_Store": true,
+      "**/node_modules/**": true,
+      "**/.git": true,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
     },
   },
 }

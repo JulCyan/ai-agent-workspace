@@ -18,7 +18,7 @@
 !/.agent/
 /.agent/*
 
-# Always track: rules, workflows, docs (templates)
+# Always track: rules, workflows, docs
 !/.agent/rules/
 !/.agent/rules/**
 !/.agent/workflows/
@@ -27,12 +27,10 @@
 !/.agent/docs/**
 /.agent/docs/archive/
 
-# Track projects (active projects)
+# ==============================
+# projects: Privacy First
+# ==============================
 !/.agent/projects/
-!/.agent/projects/**
-
-# ⚠️ Do NOT track: archive (completed projects inside projects)
-/.agent/projects/archive/
-
-# Template files
-!/.agent/pending-backend-template.md
+/.agent/projects/**
+!/.agent/projects/shared/
+!/.agent/projects/shared/**

@@ -10,15 +10,15 @@ description: 项目开发工作流 - 目录结构与交互规则
 
 ```text
 .agent/
-├── docs/                      # 通用文档/模板 (跟踪)
+├── docs/                      # 通用文档/模板 (✅ 跟踪)
 │   └── templates/
-├── projects/                  # 活跃工作区 (跟踪)
-│   ├── <project-branch>/
+├── projects/                  # 项目工作区 (❌ 默认不跟踪)
+│   ├── shared/                # 🔄 跨设备同步 (✅ 跟踪)
+│   ├── <project-branch>/      # 💻 活跃项目工作区
 │   │   ├── docs/              # 需求、方案、输出
 │   │   ├── prototypes/        # 原型设计
 │   │   └── apis/              # 接口文档 + 数据
-│   └── archive/               # 归档 (不跟踪)
-│       └── <project-branch>/
+│   └── archive/               # 🏁 归档
 ├── rules/
 └── workflows/
 ```

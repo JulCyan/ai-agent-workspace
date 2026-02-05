@@ -53,15 +53,13 @@ cp go-study.code-workspace my-project.code-workspace
 Workspace/
 ├── .agent/                     # 🧠 AI 大脑核心
 │   ├── docs/                   # 通用文档/模板 (✅ Git Tracked)
-│   ├── projects/               # ⚡ 活跃项目工作区 (✅ Git Tracked)
-│   │   ├── <project-name>/     #   单个项目上下文
-│   │   │   ├── docs/           #     需求/方案
-│   │   │   ├── apis/           #     API 文档/数据
-│   │   │   └── prototypes/     #     原型设计
-│   │   └── archive/            #   🏁 已完成项目归档 (❌ Ignored)
+│   ├── projects/               # ⚡ 项目工作区 (❌ Ignored)
+│   │   ├── shared/             #   🔄 跨设备同步 (✅ Git Tracked)
+│   │   ├── <project-branch>/    #   💻 活跃项目工作区 (❌ Ignored)
+│   │   └── archive/            #   🏁 已完成归档 (❌ Ignored)
 │   ├── rules/                  # 📏 全局 Prompt 规则 (✅ Git Tracked)
 │   ├── workflows/              # 🔄 常用 AI 工作流脚本 (✅ Git Tracked)
-│   └── context/                # 💾 私有记忆 (❌ Ignored - Privacy First)
+│   └── context/                # 💾 私有记忆 (❌ Ignored)
 ├── .workspace/                 # 🟢 [核心] 工作区定义文件
 │   ├── base.code-workspace     # 基础模版 (作为继承源)
 │   └── full.code-workspace     # 全局管理入口

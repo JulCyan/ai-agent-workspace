@@ -23,19 +23,19 @@
     },
   ],
   "settings": {
-    // 🏷️ Active Rule Tags
+    // 🏷️ Active Rule Tags (Default) / 默认激活规则标签
     "agent.active_rule_tags": ["go", "backend", "general"],
-    // 🙈 Hide the outer 'Workspace' meta-repo to focus on inner project repos
-    "git.ignoredRepositories": [
-      "../."
-    ],
-    // [体验] 自动保存，防止意外丢失
+    // 🙈 Hide 'Workspace' meta-repo / 隐藏父级元仓库
+    // Prevent detecting root repo check in sub-projects / 防止在子项目中检测到根仓库
+    // Relative path works! / 相对路径也是支持的！
+    "git.ignoredRepositories": ["../."],
+    // [UX] Auto Save / 自动保存
     "files.autoSave": "onFocusChange",
-    // [规范] 保存时自动格式化，保持代码整洁
+    // [Style] Format on Save / 保存时自动格式化
     "editor.formatOnSave": true,
-    // [规范] 自动清除行尾空格，减少 Git 差异噪音
+    // [Style] Trim Trailing Whitespace / 清除行尾空格
     "files.trimTrailingWhitespace": true,
-    // [规范]文件末尾保留空行，符合 POSIX 标准
+    // [Style] Insert Final Newline / 文件末尾插入空行
     "files.insertFinalNewline": true,
     "search.exclude": {
       "**/node_modules": true,
