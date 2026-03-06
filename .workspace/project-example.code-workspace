@@ -1,0 +1,58 @@
+{
+  "folders": [
+    {
+      "path": "../.agent",
+    },
+    {
+      "path": "../.vscode",
+    },
+    {
+      "path": "../.workspace",
+    },
+    {
+      "path": "../project-example",
+    },
+  ],
+  "settings": {
+    // 🏷️ Active Rule Tags (Default) / 默认激活规则标签
+    "agent.active_rule_tags": ["go", "project-example", "backend", "general"],
+    // 🙈 Hide 'Workspace' meta-repo / 隐藏父级元仓库
+    // Prevent detecting root repo check in sub-projects / 防止在子项目中检测到根仓库
+    // Relative path works! / 相对路径也是支持的！
+    "git.ignoredRepositories": ["../."],
+    // [UX] Auto Save / 自动保存
+    "files.autoSave": "onFocusChange",
+    // [Style] Format on Save / 保存时自动格式化
+    "editor.formatOnSave": true,
+    // [Style] Trim Trailing Whitespace / 清除行尾空格
+    "files.trimTrailingWhitespace": true,
+    // [Style] Insert Final Newline / 文件末尾插入空行
+    "files.insertFinalNewline": true,
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/bower_components": true,
+      "**/*.code-search": true,
+      "**/.egg": true,
+      "**/run": true,
+      "**/dist": true,
+      "**/coverage": true,
+      "**/.history": true,
+      "**/.idea": true,
+    },
+    "files.watcherExclude": {
+      "**/node_modules/**": true,
+      "**/dist/**": true,
+      "**/.git/objects/**": true,
+      "**/.egg/**": true,
+      "**/coverage/**": true,
+    },
+    "files.exclude": {
+      "**/node_modules/**": true,
+      "**/.git": true,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+    },
+  },
+}

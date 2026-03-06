@@ -1,5 +1,5 @@
 ---
-trigger: model_decision
+trigger: manual
 description: 前端先行开发
 ---
 
