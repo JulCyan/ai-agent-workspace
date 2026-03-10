@@ -34,3 +34,9 @@
 /.agent/projects/**
 !/.agent/projects/shared/
 !/.agent/projects/shared/**
+
+!.agent/context/
+!.agent/context/**
+
+!.agent/skills/
+!.agent/skills/**

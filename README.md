@@ -58,6 +58,7 @@ Workspace/
 │   │   ├── <project-branch>/    #   💻 活跃项目工作区 (❌ Ignored)
 │   │   └── archive/            #   🏁 已完成归档 (❌ Ignored)
 │   ├── rules/                  # 📏 全局 Prompt 规则 (✅ Git Tracked)
+│   ├── skills/                 # 🛠️ Agent 技能模块 (✅ Git Tracked)
 │   ├── workflows/              # 🔄 常用 AI 工作流脚本 (✅ Git Tracked)
 │   └── context/                # 💾 私有记忆 (❌ Ignored)
 ├── .workspace/                 # 🟢 [核心] 工作区定义文件
@@ -94,7 +95,18 @@ trigger: model_decision
 ---
 ```
 
-> **默认策略**: 若未配置 Tag，系统默认加载 `["core", "general"]` 标签的规则。
+### 3. 加载规则 (Load Rules)
+
+在对话开始时，通过 `/load-rules` 工作流主动加载当前工作区匹配的规则：
+
+```bash
+/load-rules <workspace-name>
+# 例如：/load-rules amb-go-seller
+```
+
+> **执行原理**: 触发 `.agent/workflows/load-rules.md` 后，Agent 会根据 `rule-loader` Skill 读取对应工作区配置中的 Tags，与规则文件的 Tags 取交集，并智能注入所有匹配的业务规则。
+
+> **默认策略**: 若工作区未配置 Tag，系统默认提取 `["core", "general"]` 标签的规则。
 
 ## 🤝 Contributing
 

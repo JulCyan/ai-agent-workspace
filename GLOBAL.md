@@ -12,10 +12,12 @@
     - `user_request`: 仅当用户明确提及该主题时生效。
     - `model_decision`: Agent 根据当前任务上下文自行判断是否加载该规则。
   - **加载策略 (Loading Strategy)**：
-    1. 读取配置项 `settings["agent.active_rule_tags"]`。
-       - \> **Fallback**: 若未定义或无活跃工作区，默认使用 `["general", "core"]`。
-    2. 仅加载 `active_rule_tags` 与规则文件 `tags` 有交集的规则。
-    3. 若规则标记为 `trigger: always`，则忽略 Tag 限制始终加载。
+    1. 用户在对话开始时执行 `/load-rules <workspace-name>`，
+       或 Agent 在判断需要项目特定规则时主动参考 `rule-loader` Skill。
+    2. Agent 读取 `.workspace/<name>.code-workspace` 中的 `agent.active_rule_tags`。
+       - \> **Fallback**: 若未定义或解析失败，默认使用 `["general", "core"]`。
+    3. 仅加载 `active_rule_tags` 与规则文件 `tags` 有交集的规则。
+    4. 若规则标记为 `trigger: always`，则忽略 Tag 限制始终加载。
 
 # ------ 1. 基本原则 ------
 
